@@ -104,21 +104,21 @@ typedef struct _some_structure {
 	float   someData[1000];
 } some_structure;
 
-void demoDataTypeOverflow(int totalItemsCount, some_structure* pItem, int itemPosition) {
-	// See http://blogs.msdn.com/oldnewthing/archive/2004/01/29/64389.aspx
-	some_structure* data_copy = NULL;
-	int bytesToAllocation = totalItemsCount * sizeof(some_structure);
-	printf("Bytes to allocation: %d\n", bytesToAllocation);
-	data_copy = (some_structure*)malloc(bytesToAllocation);
-	if (itemPosition >= 0 && itemPosition < totalItemsCount) {
-		memcpy(&(data_copy[itemPosition]), pItem, sizeof(some_structure));
-	}
-	else {
-		printf("Out of bound assignment");
-		return;
-	}
-	free(data_copy);
-}
+//void demoDataTypeOverflow(int totalItemsCount, some_structure* pItem, int itemPosition) {
+//	// See http://blogs.msdn.com/oldnewthing/archive/2004/01/29/64389.aspx
+//	some_structure* data_copy = NULL;
+//	int bytesToAllocation = totalItemsCount * sizeof(some_structure);
+//	printf("Bytes to allocation: %d\n", bytesToAllocation);
+//	data_copy = (some_structure*)malloc(bytesToAllocation);
+//	if (itemPosition >= 0 && itemPosition < totalItemsCount) {
+//		memcpy(&(data_copy[itemPosition]), pItem, sizeof(some_structure));
+//	}
+//	else {
+//		printf("Out of bound assignment");
+//		return;
+//	}
+//	free(data_copy);
+//}
 
 
 int main() {
